@@ -77,6 +77,9 @@ const TOTAL_CHARS = response.reduce((sum, block) => sum + blockLength(block), 0)
 const prefersReducedMotion = () =>
   window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const mentionClass =
+  "rounded bg-[#222] px-1.5 py-0.5 font-mono text-[11px] text-[#b0b0b0] hover:bg-[#2a2a2a] hover:text-[#d4d4d4] transition-colors";
+
 const InlineSpan = ({ inline, visible }: { inline: Inline; visible: number }) => {
   if (visible <= 0) return null;
   const text = inline.text.slice(0, visible);
@@ -91,7 +94,7 @@ const InlineSpan = ({ inline, visible }: { inline: Inline; visible: number }) =>
           href={inline.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-[#61a5fa] hover:underline underline-offset-2"
+          className={mentionClass}
         >
           {text}
         </a>
@@ -145,7 +148,7 @@ const StreamedBlock = ({
   if (block.kind === "listItem") {
     return (
       <p className="my-1 pl-4">
-        <span className="mr-2 text-[#6b6b6b]">-</span>
+        <span className="mr-2 text-[#6b6b6b]">•</span>
         {inlines}
         {showCaret && <Caret />}
       </p>
@@ -247,9 +250,7 @@ const Home = () => {
               <Check size={13} className="text-[#4ec9b0]" aria-hidden="true" />
             )}
             <span>Read</span>
-            <span className="rounded bg-[#222] px-1.5 py-0.5 font-mono text-[11px] text-[#b0b0b0]">
-              your-name.md
-            </span>
+            <span className={mentionClass}>your-name.md</span>
           </div>
         )}
 
