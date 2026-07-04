@@ -40,18 +40,29 @@
 }
 
 @keyframes image-reveal {
-  from {
-    opacity: 0;
-    transform: translateY(6px);
+  0% {
+    opacity: 0.65;
+    filter: blur(22px) grayscale(1) brightness(1.2) contrast(0.85) saturate(0.4);
+    transform: scale(1.08);
   }
-  to {
+  35% {
     opacity: 1;
-    transform: translateY(0);
+    filter: blur(12px) grayscale(1) brightness(1.08) contrast(0.92) saturate(0.65);
+    transform: scale(1.04);
+  }
+  70% {
+    filter: blur(4px) grayscale(1) brightness(1.02) contrast(0.98) saturate(0.85);
+    transform: scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0) grayscale(1) brightness(1) contrast(1) saturate(1);
+    transform: scale(1);
   }
 }
 
 .image-reveal {
-  animation: image-reveal 300ms ease-out;
+  animation: image-reveal 1.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @media (prefers-reduced-motion: reduce) {
