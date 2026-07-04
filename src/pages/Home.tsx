@@ -13,9 +13,9 @@ type Block =
 
 type Phase = "boot" | "prompt" | "reading" | "streaming" | "done";
 
-// How many "characters" an image consumes in the stream. Gives a short
-// beat before the photo pops in, like a markdown image finishing rendering.
-const IMAGE_STREAM_COST = 8;
+// How many "characters" an image consumes in the stream. Holds the stream
+// while the photo sharpens in, like an AI image finishing generation.
+const IMAGE_STREAM_COST = 32;
 
 const response: Block[] = [
   {
@@ -122,15 +122,16 @@ const StreamedBlock = ({
   if (visible <= 0) return null;
 
   if (block.kind === "image") {
-    if (visible < IMAGE_STREAM_COST) return null;
     return (
-      <img
-        src={block.src}
-        alt={block.alt}
-        width={176}
-        height={176}
-        className="image-reveal my-3 h-40 w-40 rounded-lg object-cover object-[center_15%] grayscale sm:my-4 sm:h-44 sm:w-44"
-      />
+      <div className="my-3 h-40 w-40 overflow-hidden rounded-lg sm:my-4 sm:h-44 sm:w-44">
+        <img
+          src={block.src}
+          alt={block.alt}
+          width={176}
+          height={176}
+          className="image-reveal h-full w-full object-cover object-[center_15%] grayscale"
+        />
+      </div>
     );
   }
 
