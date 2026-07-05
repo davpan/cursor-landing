@@ -286,7 +286,7 @@ const Home = () => {
             <span className="h-3 w-3 rounded-full bg-[#28c840]" />
           </div>
           <span className="absolute left-1/2 -translate-x-1/2 text-xs text-[#8a8a8a]">
-            your-name — Cursor
+            Cursor
           </span>
         </div>
 
