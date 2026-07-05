@@ -250,7 +250,7 @@ const Home = () => {
               <Check size={13} className="text-[#4ec9b0]" aria-hidden="true" />
             )}
             <span>Read</span>
-            <span className={mentionClass}>your-name.md</span>
+            <span className={mentionClass}>about.md</span>
           </div>
         )}
 

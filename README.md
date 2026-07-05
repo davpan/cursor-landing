@@ -7,9 +7,9 @@ as if an agent just answered "who is your name?"
 
 Everything personal lives in two places:
 
-1. **`src/pages/Home.tsx`** — the chat prompt, window title, transcript, links,
-   and headshot alt text. Search for `Your Name`, `Your Title`, `Your City`,
-   `yourhandle`, and `your-name.md`, then replace them.
+1. **`src/pages/Home.tsx`** — the chat prompt, transcript, links, and headshot
+   alt text. Search for `Your Name`, `Your Title`, `Your City`, and
+   `yourhandle`, then replace them.
 2. **`index.html`** — page title, description, author, and social meta tags.
 
 Swap `public/headshot.png` for your portrait (square crops look best). Optionally
