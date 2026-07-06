@@ -5,6 +5,27 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#0a0a0a" />
+    <meta name="color-scheme" content="dark" />
+    <!-- Paint the dark canvas before JS/CSS bundles load (avoids white flash on slow connections). -->
+    <style>
+      html {
+        height: 100%;
+        background-color: #0a0a0a;
+        color-scheme: dark;
+      }
+
+      body {
+        margin: 0;
+        height: 100%;
+        background-color: #0a0a0a;
+      }
+
+      #root {
+        min-height: 100%;
+        background-color: #0a0a0a;
+      }
+    </style>
+    <link rel="preload" as="image" href="/headshot.png" />
     <title>Your Name — Your Title</title>
     <meta name="description" content="Your Name is Your Title. Replace this description with your own bio." />
     <meta name="author" content="Your Name" />
